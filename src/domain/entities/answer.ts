@@ -7,7 +7,7 @@ interface AnswerProps {
 }
 export class Answer {
   public id: string
-  public content: string;
+  public content: string
   public authorId: string
   public questionId: string
 
