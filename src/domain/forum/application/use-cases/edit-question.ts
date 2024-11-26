@@ -1,3 +1,4 @@
+import { Question } from '../../enterprise/entities/question'
 import { QuestionsRepository } from '../repositories/questions-repository'
 
 interface EditQuestionUseCaseRequest {
@@ -8,7 +9,9 @@ interface EditQuestionUseCaseRequest {
 }
 
 // eslint-disable-next-line prettier/prettier
-interface EditQuestionUseCaseResponse { }
+interface EditQuestionUseCaseResponse {
+  question: Question
+}
 
 export class EditQuestionUseCase {
   // eslint-disable-next-line prettier/prettier
@@ -35,6 +38,6 @@ export class EditQuestionUseCase {
 
     await this.questionsRepository.save(question)
 
-    return {}
+    return { question }
   }
 }
