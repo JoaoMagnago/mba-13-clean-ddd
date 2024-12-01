@@ -11,15 +11,15 @@ describe('Send Notification', () => {
   })
 
   it('should be able send a notification', async () => {
-    const retult = await sut.execute({
+    const result = await sut.execute({
       recipientId: '1',
       title: 'Nova notificação',
       content: 'Conteúdo da notificação',
     })
 
-    expect(retult.isRight()).toBe(true)
+    expect(result.isRight()).toBe(true)
     expect(inMemoryNotificationsRepository.items[0]).toEqual(
-      retult.value?.notification,
+      result.value?.notification,
     )
   })
 })

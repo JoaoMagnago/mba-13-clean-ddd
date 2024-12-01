@@ -18,15 +18,15 @@ describe('Create Question', () => {
   })
 
   it('should be able to create a question', async () => {
-    const retult = await sut.execute({
+    const result = await sut.execute({
       authorId: '1',
       title: 'Nova pergunta',
       content: 'Conteúdo da pergunta',
       attachmentsIds: ['1', '2'],
     })
 
-    expect(retult.isRight()).toBe(true)
-    expect(inMemoryQuestionsRepository.items[0]).toEqual(retult.value?.question)
+    expect(result.isRight()).toBe(true)
+    expect(inMemoryQuestionsRepository.items[0]).toEqual(result.value?.question)
     expect(
       inMemoryQuestionsRepository.items[0].attachments.currentItems,
     ).toHaveLength(2)
